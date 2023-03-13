@@ -2,10 +2,15 @@ const mainPage = require("./module/html");
 console.log(mainPage);
 // 파일 가져옴
 const http = require('http');
+const { resolve } = require("path");
 
 const server = http.createServer(function(request, response){
+  
   response.statusCode = 200;
   response.setHeader('Content-Type', 'text/html');
+  
+  
+  response.write('test');
   response.end(mainPage);
 });
 // 응답 패턴 알려줌
